@@ -1,0 +1,106 @@
+/*box ng-animate highlight-remove highlight-remove-active
+box ng-animate highlight-add highlight highlight-add-active
+1. highlight-remove -> highlight-remove-active
+2. highlight-add -> highlight-add-active
+
+[ng-enter, ngenter-active
+ng-leave, ng-leave-active]
+
+ng-view  ==   ui-view
+ngswitch ==  ui-view
+ngif
+nginclude
+*/
+
+.box {
+  height: 100px;
+  width: 100px;
+  border: 1px solid grey;
+}
+
+.box.highlight {
+	
+}
+
+.highlight {
+	
+}
+
+
+
+.highlight-add {
+	transition: background 0.3s ease;
+}
+
+.highlight, .highlight-add-active {
+	  border: 1px solid tomato;
+  		background: teal;
+}
+
+.highlight-remove {
+	transition: background 0.3s ease;
+}
+
+.highlight-remove-active{
+	background: white;
+}
+
+[ui-view].ng-enter {
+	transition: transform 0.5s ease;
+	transform: translate3d(100%, 0 , 0);
+}
+[ui-view].ng-leave {
+	transition: transform 0.8s ease;
+}
+[ui-view].ng-leave-active {
+	transform: translate3d(-100%, 0 , 0);
+}
+
+.dynamic-view-wrapper {
+		    height: 500px;
+    width: 100%;
+    font-size: 2em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+[ui-view].ng-enter-active, .panel{
+	transform: translate3d(0, 0 , 0);
+	
+}
+
+.panel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alertBox {
+  border: 1px solid red;
+  background: rgba(0,0,0,0.4);
+}
+
+.alertBox.ng-enter {
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+
+.alertBox.ng-enter-active {
+  opacity: 1;
+}
+
+.alertBox.ng-leave {
+  opacity: 1;
+   transition: opacity 0.9s ease;
+}
+.alertBox.ng-leave-active {
+  opacity: 0;
+}
